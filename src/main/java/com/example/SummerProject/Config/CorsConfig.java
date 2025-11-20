@@ -18,7 +18,7 @@ public class CorsConfig {
                             "http://localhost:3000", 
                             "http://localhost:5173", 
                             "http://localhost:5174",
-                            "https://shopspheresworld.netlify.app"
+                            "https://shopspheresworld.netlify.app",
                             "https://691f37b2c38e5f0009f3804c--shopspheresworld.netlify.app"  // Add your Netlify URL here
                               // Allow all Netlify preview deployments
                         )
