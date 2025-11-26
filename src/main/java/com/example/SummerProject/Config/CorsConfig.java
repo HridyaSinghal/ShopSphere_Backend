@@ -20,6 +20,7 @@ public class CorsConfig {
                             "http://localhost:5174",
                             "https://shopspheresworld.netlify.app",
                             "https://shopyworlds.netlify.app"
+
                             // "https://691f37b2c38e5f0009f3804c--shopspheresworld.netlify.app",
                             // "https://guileless-cranachan-c707ed.netlify.app"
           // Add your Netlify URL here
