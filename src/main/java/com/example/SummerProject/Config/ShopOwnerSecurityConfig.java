@@ -35,6 +35,7 @@ public class ShopOwnerSecurityConfig {
     @Bean(name = "shopOwnerFilterChain")
     public SecurityFilterChain shopOwnerFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/shopowner/**")
+            .cors().and()
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/shopowner/login", "/shopowner/signup").permitAll()

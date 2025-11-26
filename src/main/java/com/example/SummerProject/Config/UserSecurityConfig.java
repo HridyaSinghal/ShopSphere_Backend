@@ -38,6 +38,7 @@ private CommonSecurityBeans commonSecurityBeans;
     @Bean(name = "userFilterChain")
     public SecurityFilterChain userFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/auth/**")
+            .cors().and()
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll() // adjust paths as needed
@@ -53,7 +54,8 @@ private CommonSecurityBeans commonSecurityBeans;
     @Bean(name = "userApiFilterChain")
     public SecurityFilterChain userApiFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/api/user/**")
-            .csrf().disable()
+        .cors().and()     
+        .csrf().disable()
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Allow CORS preflight
                 .requestMatchers("/api/user/auth/**").permitAll()
@@ -70,6 +72,7 @@ private CommonSecurityBeans commonSecurityBeans;
     @Bean(name = "publicApiFilterChain")
     public SecurityFilterChain publicApiFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/api/public/**")
+            .cors().and()    
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Allow CORS preflight
